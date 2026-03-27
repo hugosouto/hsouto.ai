@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hugo Souto — AI Solutions Architect</title>
+<meta name="description" content="Hugo Souto builds AI systems governments trust to serve 170 million citizens. AI Solutions Architect. Founder, 4io.ai.">
+<meta name="author" content="Hugo Medeiros Souto">
+<meta property="og:title" content="Hugo Souto — AI Solutions Architect">
+<meta property="og:description" content="Hugo Souto builds AI systems governments trust to serve 170 million citizens. AI Solutions Architect. Founder, 4io.ai.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hsouto.ai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hugo Souto — AI Solutions Architect">
+<meta name="twitter:description" content="Hugo Souto builds AI systems governments trust to serve 170 million citizens.">
+<meta name="theme-color" content="#1A2744">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="canonical" href="https://hsouto.ai">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Hugo Medeiros Souto",
+  "jobTitle": "AI Solutions Architect",
+  "url": "https://hsouto.ai",
+  "sameAs": ["https://linkedin.com/in/hugosouto","https://github.com/hugosouto","https://4io.ai"],
+  "knowsAbout": ["Artificial Intelligence","Machine Learning","Agentic AI","RAG","Multi-Agent Systems","LangGraph","PydanticAI","Context Engineering","MLOps"],
+  "email": "hsouto.ai@gmail.com"
+}
+</script>
+<style>
+  :root {
+    --bg: #FAFBFC; --white: #FFFFFF; --gray-50: #F8F9FA; --gray-100: #F1F3F5;
+    --gray-200: #E5E8ED; --gray-300: #CED4DA; --navy: #1A2744;
+    --blue: #0057B8; --blue-light: #EBF3FC;
+    --text: #1A2744; --text-2: #4A5A78; --text-3: #7A8AA4;
+    --gold: #B8860B; --green: #15803D;
+    --font: 'IBM Plex Sans', -apple-system, sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --max-w: 920px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-snap-type: y proximity; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  .snap-section { scroll-snap-align: start; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid var(--gray-200); }
+  .snap-section:last-of-type { border-bottom: none; }
+  .snap-section.alt { background: var(--white); }
+  .snap-section.dark { background: linear-gradient(135deg, #0a1628 0%, #1A2744 50%, #0a1628 100%); color: white; border-bottom-color: #0a1628; }
+  .snap-section.dark .section-label { color: var(--gold); }
+  .snap-section.dark h1, .snap-section.dark h2 { color: white; }
+  .snap-section.dark .lead { color: rgba(255,255,255,0.7); }
+  .snap-section.dark .lead strong { color: white; }
+  .snap-section.dark .divider { background: var(--gold); }
+  .snap-section.dark .metric .ml { color: rgba(255,255,255,0.5); }
+  .snap-section.dark .metric .mv.nv { color: white; }
+  .snap-section.short { min-height: auto; }
+  section { max-width: var(--max-w); margin: 0 auto; padding: 80px 32px; width: 100%; }
+
+  .section-label { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--blue); margin-bottom: 10px; font-weight: 500; }
+  h1 { font-size: 52px; font-weight: 700; line-height: 1.05; letter-spacing: -0.035em; color: var(--navy); }
+  h2 { font-size: 30px; font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; color: var(--navy); margin-bottom: 8px; }
+  h3 { font-size: 17px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .divider { width: 40px; height: 3px; background: var(--blue); margin: 16px 0; border-radius: 2px; }
+  .lead { font-size: 16px; color: var(--text-2); max-width: 620px; line-height: 1.55; font-weight: 300; }
+  .lead strong { color: var(--navy); font-weight: 600; }
+
+  .metrics { display: flex; gap: 48px; margin-top: 40px; flex-wrap: wrap; }
+  .metric .mv { font-size: 38px; font-weight: 700; line-height: 1; }
+  .metric .mv.bl { color: var(--blue); } .metric .mv.go { color: var(--gold); }
+  .metric .mv.gr { color: var(--green); } .metric .mv.nv { color: var(--navy); }
+  .metric .ml { font-size: 12px; color: var(--text-3); margin-top: 4px; line-height: 1.3; }
+
+  /* CAROUSEL */
+  .carousel { margin-top: 28px; }
+  .carousel-track { overflow: hidden; }
+  .carousel-slide { display: none; }
+  .carousel-slide.active { display: block; }
+  .carousel-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 28px 30px; }
+  .cc-head { display: flex; justify-content: space-between; align-items: flex-start; }
+  .cc-title { font-size: 18px; font-weight: 600; color: var(--navy); }
+  .cc-date { font-family: var(--mono); font-size: 11px; color: var(--text-3); margin-top: 2px; }
+  .cc-metric { font-size: 24px; font-weight: 700; color: var(--blue); white-space: nowrap; margin-left: 16px; }
+  .cc-metric.go { color: var(--gold); } .cc-metric.gr { color: var(--green); } .cc-metric.nv { color: var(--navy); }
+  .cc-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
+  .cc-tag { padding: 2px 8px; border-radius: 3px; font-family: var(--mono); font-size: 10px; background: var(--blue-light); color: var(--blue); font-weight: 500; }
+  .cc-summary { font-size: 14px; color: var(--text-2); margin-top: 14px; line-height: 1.55; }
+  .cc-summary strong { color: var(--navy); }
+  .cc-toggle { font-family: var(--mono); font-size: 10px; color: var(--text-3); margin-top: 14px; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; padding: 6px 0; border: none; background: none; }
+  .cc-toggle:hover { color: var(--blue); }
+  .cc-toggle::before { content: '+ '; }
+  .cc-toggle.open::before { content: '- '; }
+  .cc-panel { display: none; margin-top: 10px; }
+  .cc-panel.open { display: block; }
+  .cc-story .star-label { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--blue); margin-top: 14px; margin-bottom: 4px; font-weight: 500; }
+  .cc-story .star-label:first-child { margin-top: 0; }
+  .cc-story p { font-size: 13.5px; color: var(--text-2); line-height: 1.6; }
+  .carousel-nav { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; }
+  .carousel-dots { display: flex; gap: 8px; }
+  .carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gray-300); border: none; cursor: pointer; padding: 0; transition: all 0.2s; }
+  .carousel-dot.on { background: var(--blue); transform: scale(1.3); }
+  .carousel-arrows { display: flex; gap: 6px; }
+  .carousel-arrows button { width: 36px; height: 36px; border-radius: 6px; border: 1px solid var(--gray-200); background: var(--white); color: var(--text-2); font-size: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
+  .carousel-arrows button:hover { border-color: var(--blue); color: var(--blue); }
+  .carousel-arrows button:disabled { opacity: 0.25; cursor: default; }
+  .carousel-counter { font-family: var(--mono); font-size: 12px; color: var(--text-3); }
+  .carousel-counter .cur { color: var(--blue); font-weight: 500; }
+
+  /* PILLS */
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .pill { padding: 5px 12px; border-radius: 4px; font-size: 12px; font-weight: 500; background: var(--navy); color: white; }
+  .pill.light { background: var(--blue-light); color: var(--blue); }
+  .pill.blue { background: var(--blue); color: white; } .pill.blue.light { background: #EBF3FC; color: var(--blue); }
+  .pill.green { background: var(--green); color: white; } .pill.green.light { background: #ECFDF5; color: var(--green); }
+  .pill.gold { background: var(--gold); color: white; } .pill.gold.light { background: #FEF9EC; color: #92640A; }
+  .pill.purple { background: #6B21A8; color: white; } .pill.purple.light { background: #F3E8FF; color: #6B21A8; }
+  .pill.teal { background: #0D7377; color: white; } .pill.teal.light { background: #E6F7F7; color: #0D7377; }
+
+  /* GRIDS */
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px; }
+  .tech-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 24px; }
+  .tech-card { border-top: 2px solid var(--navy); padding: 14px 0; }
+  .tech-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+
+  /* GLASS CARDS */
+  .card-glass { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 24px 28px; backdrop-filter: blur(10px); transition: transform 0.2s, border-color 0.2s; display: block; }
+  .card-glass:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.25); }
+  .card-glass h3 { color: white; margin-bottom: 6px; }
+  .card-glass p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+  /* 4IO SECTION */
+  .fourio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 28px; }
+  .fourio-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 28px; transition: transform 0.2s, box-shadow 0.2s; }
+  .fourio-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+  .fourio-card h3 { font-size: 16px; margin-bottom: 8px; }
+  .fourio-card p { font-size: 14px; color: var(--text-2); line-height: 1.5; }
+  .fourio-card .fc-label { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 10px; font-weight: 500; }
+
+  /* REFS */
+  .refs-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 20px; }
+  .ref-link { background: var(--white); border: 1px solid var(--gray-200); border-radius: 6px; padding: 10px 12px; text-decoration: none; transition: border-color 0.15s; display: block; }
+  .ref-link:hover { border-color: var(--blue); }
+  .ref-link .ref-label { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--blue); }
+  .ref-link .ref-desc { font-size: 11px; color: var(--text-2); margin-top: 2px; }
+
+  /* PROGRESS RAIL */
+  .progress-rail { position: fixed; right: 28px; top: 50%; transform: translateY(-50%); z-index: 90; display: flex; flex-direction: column; align-items: center; }
+  .rail-line { width: 1px; height: 20px; background: var(--gray-300); }
+  .rail-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gray-300); border: none; cursor: pointer; padding: 0; transition: all 0.25s; position: relative; }
+  .rail-dot.on { background: var(--blue); transform: scale(1.4); }
+  .rail-tip { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-3); white-space: nowrap; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
+  .rail-dot:hover .rail-tip, .rail-dot.on .rail-tip { opacity: 1; }
+
+  /* LANG TOGGLE */
+  .lang-toggle { position: fixed; left: 28px; bottom: 28px; z-index: 90; display: flex; gap: 2px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 6px; padding: 3px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .lang-btn { font-family: var(--mono); font-size: 11px; font-weight: 500; padding: 4px 12px; border: none; border-radius: 4px; cursor: pointer; background: transparent; color: var(--text-3); transition: background 0.15s, color 0.15s; }
+  .lang-btn.on { background: var(--navy); color: white; }
+
+  /* FADE-IN */
+  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.6s, transform 0.6s; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    .snap-section { min-height: auto; }
+    section { padding: 48px 20px; }
+    h1 { font-size: 34px; }
+    h2 { font-size: 24px; }
+    .metrics { gap: 24px; }
+    .metric .mv { font-size: 28px; }
+    .info-grid, .fourio-grid { grid-template-columns: 1fr; }
+    .tech-grid { grid-template-columns: 1fr 1fr; }
+    .refs-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .progress-rail { display: none; }
+    .contact-grid { grid-template-columns: 1fr 1fr !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-rail" id="rail"></div>
+<div class="lang-toggle">
+  <button class="lang-btn on" id="btnEn" aria-label="English">EN</button>
+  <button class="lang-btn" id="btnPt" aria-label="Português">PT</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- HERO                                                          -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="snap-section dark">
+<section id="hero">
+  <div class="section-label"><span data-en>AI Solutions Architect · Founder, 4io.ai</span><span data-pt style="display:none;">Arquiteto de Soluções de IA · Fundador, 4io.ai</span></div>
+  <h1>Hugo Souto</h1>
+  <div class="divider"></div>
+  <p class="lead" style="margin-top:12px;max-width:540px;">
+    <span data-en>I build AI systems governments trust to serve <strong>170 million citizens</strong>. I advise organizations ready for the same standard.</span>
+    <span data-pt style="display:none;">Construo sistemas de IA em que governos confiam para servir <strong>170 milhões de cidadãos</strong>. Assessoro organizações que buscam o mesmo padrão.</span>
+  </p>
+  <div class="metrics">
+    <div class="metric"><div class="mv bl">$29M</div><div class="ml"><span data-en>AI contracts under<br>technical governance</span><span data-pt style="display:none;">Contratos de IA sob<br>governança técnica</span></div></div>
+    <div class="metric"><div class="mv go">$630M</div><div class="ml"><span data-en>Public funds saved<br>through AI systems I built</span><span data-pt style="display:none;">Recursos públicos economizados<br>por sistemas de IA que construí</span></div></div>
+    <div class="metric"><div class="mv nv">13 yrs</div><div class="ml"><span data-en>Government technology<br>7 in AI/ML</span><span data-pt style="display:none;">Tecnologia no governo<br>7 em IA/ML</span></div></div>
+  </div>
+</section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- SELECTED WORK                                                  -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="snap-section alt">
+<section id="work">
+  <div class="section-label"><span data-en>Selected Work</span><span data-pt style="display:none;">Trabalho Selecionado</span></div>
+  <h2><span data-en>National-scale AI. Delivered.</span><span data-pt style="display:none;">IA em escala nacional. Entregue.</span></h2>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel-track">
+
+      <div class="carousel-slide active">
+        <div class="carousel-card">
+          <div class="cc-head"><div><div class="cc-title">Chat GOV.BR</div><div class="cc-date"><span data-en>National Conversational AI · 2024–Present</span><span data-pt style="display:none;">IA Conversacional Nacional · 2024–Presente</span></div></div><div class="cc-metric">355K+</div></div>
+          <div class="cc-tags"><span class="cc-tag">Gen AI</span><span class="cc-tag">RAG</span><span class="cc-tag">Multi-Agent</span><span class="cc-tag">WhatsApp</span><span class="cc-tag">Salesforce Agentforce</span></div>
+          <div class="cc-summary"><span data-en>Chief Technical Architect for Brazil's national AI chatbot on WhatsApp. Benchmarked <strong>4 Bigtech platforms</strong> (Huawei, AWS, Google, Salesforce). <strong>$13M+ contract</strong>. 355K+ conversations since launch. 10 agents scaling by June 2026.</span><span data-pt style="display:none;">Arquiteto-chefe do chatbot nacional no WhatsApp. Benchmarkei <strong>4 plataformas Bigtech</strong>. <strong>Contrato de $13M+</strong>. 355K+ conversas desde o lançamento. 10 agentes escalando até junho 2026.</span></div>
+          <button class="cc-toggle" onclick="togglePanel(this)"><span data-en>Details</span><span data-pt style="display:none;">Detalhes</span></button>
+          <div class="cc-panel"><div class="cc-story"><div class="star-label">Scope</div><p>Starting from zero: national and global benchmarks, system requirements, multi-agent architecture, RAG knowledge base design, context engineering methodology, and a $13M+ contract with unlimited LLM usage.</p><div class="star-label">Team</div><p>1 senior ML engineer (ex-Silicon Valley) and 3 data scientists. Weekly interlocution with the Minister, Secretaries, and presidential communications office.</p><div class="star-label">Decision</div><p>Chose Salesforce Agentforce over open-source for enterprise support, native WhatsApp integration, and audit/compliance requirements. Defined the 5W2H methodology for RAG knowledge bases.</p><div class="star-label">Outcome</div><p><a href="https://www.gov.br/mec/pt-br/assuntos/noticias/2026/janeiro/governo-orienta-estudantes-sobre-resultado-do-enem-pelo-gov.br" target="_blank" style="color:var(--blue);">Launched January 2026</a>, serving 4.8M students. 355K+ conversations with positive feedback.</p></div></div>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <div class="carousel-card">
+          <div class="cc-head"><div><div class="cc-title">ALICE</div><div class="cc-date"><span data-en>AI Procurement Auditing · 2021–2022</span><span data-pt style="display:none;">Auditoria de Compras com IA · 2021–2022</span></div></div><div class="cc-metric go">$630M</div></div>
+          <div class="cc-tags"><span class="cc-tag">ML/AI Integration</span><span class="cc-tag">Cross-Agency</span><span class="cc-tag">Azure Data Lake</span></div>
+          <div class="cc-summary"><span data-en>Cross-agency integration between two federal agencies. Designed the data architecture live during a critical meeting that broke an 18-month organizational deadlock. <strong>254K+ procurement processes</strong> analyzed, <strong>$630M+ saved</strong>. National Treasury Prize 2024. Best Innovation in Procurement 2026.</span><span data-pt style="display:none;">Integração inter-órgãos entre duas agências federais. Desenhei a arquitetura ao vivo em reunião que desbloqueou impasse de 18 meses. <strong>254K+ processos</strong> analisados, <strong>$630M+ economizados</strong>. Prêmio Tesouro Nacional 2024. Melhor Inovação em Licitações 2026.</span></div>
+          <button class="cc-toggle" onclick="togglePanel(this)"><span data-en>Details</span><span data-pt style="display:none;">Detalhes</span></button>
+          <div class="cc-panel"><div class="cc-story"><div class="star-label">Context</div><p>The Comptroller-General (CGU) had ALICE, a robotic auditor. I had the procurement data infrastructure. Integration was the obvious move — but the partner agency cycled through three complete team rotations over 18 months.</p><div class="star-label">Breakthrough</div><p>During a critical meeting with the third team, I designed the integration architecture on the spot — drafting the data flow live, connecting procurement databases via Azure Data Lake to CGU's core system. That shared artifact broke the deadlock.</p><div class="star-label">Outcome</div><p><a href="https://www.gov.br/cgu/pt-br/assuntos/auditoria-e-fiscalizacao/alice" target="_blank" style="color:var(--blue);">ALICE</a> has analyzed 254K+ procurement processes worth $5.7B+. <a href="https://www.youtube.com/watch?v=234EGymqotI" target="_blank" style="color:var(--blue);">Publicly launched December 2025</a>. Won National Treasury Prize 2024 and <a href="https://www.gov.br/compras/pt-br/acesso-a-informacao/noticias/compras-gov-br-vence-duas-categorias-no-premio-19-de-marco" target="_blank" style="color:var(--blue);">Best Innovation in Procurement</a> at the 21st Brazilian Congress of Public Procurement, March 2026.</p></div></div>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <div class="carousel-card">
+          <div class="cc-head"><div><div class="cc-title">ComprasGov InSights</div><div class="cc-date"><span data-en>Decision Intelligence · 2023–2024</span><span data-pt style="display:none;">Inteligência Decisória · 2023–2024</span></div></div><div class="cc-metric gr">$4.4M</div></div>
+          <div class="cc-tags"><span class="cc-tag">ML Engineering</span><span class="cc-tag">Time Series</span><span class="cc-tag">Databricks</span><span class="cc-tag">Azure</span></div>
+          <div class="cc-summary"><span data-en>Spotted bias in a vendor's ML product. Replicated and surpassed it <strong>in 3 days</strong> using my own Azure account. Evolved into Brazil's National AI Plan (PBIA) with <strong>$4.4M allocation</strong>.</span><span data-pt style="display:none;">Identifiquei viés no ML do vendor. Repliquei e superei <strong>em 3 dias</strong> usando minha conta Azure pessoal. Evoluiu para o Plano Nacional de IA (PBIA) com alocação de <strong>$4.4M</strong>.</span></div>
+          <button class="cc-toggle" onclick="togglePanel(this)"><span data-en>Details</span><span data-pt style="display:none;">Detalhes</span></button>
+          <div class="cc-panel"><div class="cc-story"><div class="star-label">Context</div><p>Vendors began pitching ML solutions with clear methodological biases. Superiors seemed ready to spend hundreds of thousands.</p><div class="star-label">Action</div><p>By Sunday — three days — I reproduced their results (including flaws), proving the approach was unsound. Built a superior model for "desert items" — procurement items attracting zero bids, affecting 7–11% of all items.</p><div class="star-label">Outcome</div><p>Evolved into ComprasGov InSights, integrating time-series, ML classification, and generative AI into the federal procurement platform. Included in Brazil's National AI Plan 2025.</p></div></div>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <div class="carousel-card">
+          <div class="cc-head"><div><div class="cc-title">COVID-19 Procurement Dashboard</div><div class="cc-date"><span data-en>Crisis Response · 2020</span><span data-pt style="display:none;">Resposta à Crise · 2020</span></div></div><div class="cc-metric nv">28 days</div></div>
+          <div class="cc-tags"><span class="cc-tag">Data Engineering</span><span class="cc-tag">SQL</span><span class="cc-tag">Airflow</span><span class="cc-tag">Looker</span></div>
+          <div class="cc-summary"><span data-en>National transparency dashboard tracking <strong>$4.3B</strong> in COVID procurement. Built from zero in 28 days. Top marks from Transparency International. <a href="https://www.gov.br/compras/pt-br/painel-covid" target="_blank" style="color:var(--blue);">Still live today.</a></span><span data-pt style="display:none;">Dashboard nacional de transparência monitorando <strong>$4.3B</strong> em compras COVID. Construído do zero em 28 dias. Nota máxima da Transparency International. <a href="https://www.gov.br/compras/pt-br/painel-covid" target="_blank" style="color:var(--blue);">Ainda ativo.</a></span></div>
+          <button class="cc-toggle" onclick="togglePanel(this)"><span data-en>Details</span><span data-pt style="display:none;">Detalhes</span></button>
+          <div class="cc-panel"><div class="cc-story"><div class="star-label">Context</div><p>Less than one month into my role as Lead Data Scientist. COVID peaked. Corruption allegations dominated news. Citizens and oversight bodies demanded transparency.</p><div class="star-label">Action</div><p>In 15 days, mapped data from 5 government databases, built SQL queries, prototyped ETL, converted into production Airflow pipelines, and designed the full Looker dashboard.</p><div class="star-label">Outcome</div><p><a href="https://www.gov.br/compras/pt-br/painel-covid" target="_blank" style="color:var(--blue);">Dashboard remains active</a>. SQL queries are <a href="https://github.com/hugosouto/comprasgov-daas-sql-queries" target="_blank" style="color:var(--blue);">open-source on GitHub</a>.</p></div></div>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <div class="carousel-card">
+          <div class="cc-head"><div><div class="cc-title">CLAD — Costa Rica</div><div class="cc-date"><span data-en>International Consulting · 2026</span><span data-pt style="display:none;">Consultoria Internacional · 2026</span></div></div><div class="cc-metric nv">46+</div></div>
+          <div class="cc-tags"><span class="cc-tag">International</span><span class="cc-tag">OCR</span><span class="cc-tag">SLM</span><span class="cc-tag">Architecture</span></div>
+          <div class="cc-summary"><span data-en>International consulting through CLAD (24-country network). Contracted for requirements — delivered a <strong>functional POC</strong>. No GPUs available; designed around a specialized SLM on local hardware. 3 languages, 46+ institutions.</span><span data-pt style="display:none;">Consultoria internacional via CLAD (24 países). Contratado para requisitos — entreguei <strong>POC funcional</strong>. Sem GPUs; projetei SLM em hardware local. 3 idiomas, 46+ instituições.</span></div>
+          <button class="cc-toggle" onclick="togglePanel(this)"><span data-en>Details</span><span data-pt style="display:none;">Detalhes</span></button>
+          <div class="cc-panel"><div class="cc-story"><div class="star-label">Context</div><p>Costa Rica processed 26K+ applications — mostly scanned documents — with 10 people serving 46+ institutions.</p><div class="star-label">Action</div><p>Beyond the contracted deliverable, built a functional POC. Tested a specialized Small Language Model for OCR on local hardware. Cross-timezone delivery (UTC-6 to UTC-3).</p><div class="star-label">Outcome</div><p>Architecture report serves as the AI blueprint for future contracts. System designed for the 1.5-year transition period.</p></div></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="carousel-nav">
+      <div class="carousel-counter"><span class="cur" id="cCur">1</span> / <span id="cTot">5</span></div>
+      <div class="carousel-dots" id="cDots"></div>
+      <div class="carousel-arrows"><button id="cPrev" onclick="cGo(-1)" disabled>&#8592;</button><button id="cNext" onclick="cGo(1)">&#8594;</button></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- THE PRACTICE                                                   -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="snap-section">
+<section id="practice">
+  <div class="section-label"><span data-en>The Practice</span><span data-pt style="display:none;">A Prática</span></div>
+  <h2><span data-en>hsouto.ai + 4io.ai</span><span data-pt style="display:none;">hsouto.ai + 4io.ai</span></h2>
+  <p class="lead"><span data-en>Individual advisory backed by a product factory. Strategy that ships.</span><span data-pt style="display:none;">Assessoria individual sustentada por uma fábrica de produtos. Estratégia que entrega.</span></p>
+
+  <div class="fourio-grid">
+    <div class="fourio-card fade-in">
+      <div class="fc-label"><span data-en>Advisory · hsouto.ai</span><span data-pt style="display:none;">Assessoria · hsouto.ai</span></div>
+      <h3><span data-en>AI Architecture & Strategy</span><span data-pt style="display:none;">Arquitetura & Estratégia de IA</span></h3>
+      <p><span data-en>Vendor evaluation, system design, and high-stakes decision support. I've been the enterprise buyer — $29M in AI contracts negotiated, 4 Bigtech platforms benchmarked. I know what works because I've built it and bought it.</span><span data-pt style="display:none;">Avaliação de vendors, design de sistemas, e suporte a decisões de alto impacto. Já fui o comprador enterprise — $29M em contratos de IA, 4 plataformas Bigtech benchmarkadas. Sei o que funciona porque já construí e comprei.</span></p>
+    </div>
+    <div class="fourio-card fade-in">
+      <div class="fc-label"><span data-en>Products · 4io.ai</span><span data-pt style="display:none;">Produtos · 4io.ai</span></div>
+      <h3><span data-en>AI for Intelligent Organizations</span><span data-pt style="display:none;">IA para Organizações Inteligentes</span></h3>
+      <p><span data-en>Products, tools, and frameworks born from real engagements. The AI Factory where consulting insight becomes production software. <a href="https://4io.ai" target="_blank" style="color:var(--blue);font-weight:600;">Explore 4io.ai →</a></span><span data-pt style="display:none;">Produtos, ferramentas e frameworks nascidos de engajamentos reais. A Fábrica de IA onde insight de consultoria se torna software em produção. <a href="https://4io.ai" target="_blank" style="color:var(--blue);font-weight:600;">Explorar 4io.ai →</a></span></p>
+    </div>
+    <div class="fourio-card fade-in">
+      <div class="fc-label"><span data-en>Training</span><span data-pt style="display:none;">Treinamento</span></div>
+      <h3><span data-en>Executive AI Programs</span><span data-pt style="display:none;">Programas Executivos de IA</span></h3>
+      <p><span data-en>Hands-on AI training for business leaders. 150+ executives trained at Gerdau (Latin America's largest steel producer) — top-rated mentor, recognized by CEO. Real production data, not toy examples.</span><span data-pt style="display:none;">Treinamento prático de IA para líderes de negócio. 150+ executivos na Gerdau — mentor top-rated, reconhecido pelo CEO. Dados reais de produção, não exemplos de brinquedo.</span></p>
+    </div>
+    <div class="fourio-card fade-in">
+      <div class="fc-label"><span data-en>Speaking & Judging</span><span data-pt style="display:none;">Palestras & Avaliação</span></div>
+      <h3><span data-en>Industry Recognition</span><span data-pt style="display:none;">Reconhecimento da Indústria</span></h3>
+      <p><span data-en>Huawei AI Developer Competition Judge 2025. World Bank fellowship endorsed. Conference speaker on AI strategy and agentic systems. International consulting through CLAD (24-country network).</span><span data-pt style="display:none;">Jurado Huawei AI Developer Competition 2025. Fellowship World Bank recomendado. Palestrante sobre estratégia de IA e sistemas agentic. Consultoria internacional via CLAD (24 países).</span></p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- DEPTH                                                          -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="snap-section alt">
+<section id="depth">
+  <div class="section-label"><span data-en>Technical Depth</span><span data-pt style="display:none;">Profundidade Técnica</span></div>
+  <h2><span data-en>What I build with</span><span data-pt style="display:none;">Com o que construo</span></h2>
+
+  <div class="tech-grid">
+    <div class="tech-card fade-in" style="border-top-color:var(--blue);"><h3>Agentic AI</h3><div class="pills" style="margin-top:6px;"><span class="pill blue">LangGraph</span><span class="pill blue">PydanticAI</span><span class="pill blue">Multi-Agent</span><span class="pill blue light">MCP</span><span class="pill blue light">Tool Calling</span><span class="pill blue light">Agentforce</span></div></div>
+    <div class="tech-card fade-in" style="border-top-color:var(--green);"><h3>RAG & LLMs</h3><div class="pills" style="margin-top:6px;"><span class="pill green">Context Engineering</span><span class="pill green">Hybrid Search</span><span class="pill green">LLM-as-a-Judge</span><span class="pill green light">Vector DB</span><span class="pill green light">Sovereign Models</span></div></div>
+    <div class="tech-card fade-in" style="border-top-color:var(--gold);"><h3><span data-en>Eval & Safety</span><span data-pt style="display:none;">Avaliação & Segurança</span></h3><div class="pills" style="margin-top:6px;"><span class="pill gold">Red Teaming</span><span class="pill gold">Guardrails</span><span class="pill gold">Arize AX</span><span class="pill gold light">Drift Detection</span></div></div>
+    <div class="tech-card fade-in" style="border-top-color:var(--navy);"><h3>Cloud & MLOps</h3><div class="pills" style="margin-top:6px;"><span class="pill">Azure</span><span class="pill">Databricks</span><span class="pill">Airflow</span><span class="pill light">MLflow</span><span class="pill light">GCP</span></div></div>
+    <div class="tech-card fade-in" style="border-top-color:#6B21A8;"><h3><span data-en>Foundations</span><span data-pt style="display:none;">Fundamentos</span></h3><div class="pills" style="margin-top:6px;"><span class="pill purple">Probability</span><span class="pill purple">Linear Algebra</span><span class="pill purple light">Statistics</span><span class="pill purple light">Optimization</span></div></div>
+    <div class="tech-card fade-in" style="border-top-color:#0D7377;"><h3>Stack</h3><div class="pills" style="margin-top:6px;"><span class="pill teal">Python</span><span class="pill teal">SQL</span><span class="pill teal">Spark</span><span class="pill teal light">TensorFlow</span><span class="pill teal light">PyTorch</span></div></div>
+  </div>
+</section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- CONTACT                                                        -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="snap-section dark">
+<section id="contact">
+  <div class="section-label"><span data-en>Contact</span><span data-pt style="display:none;">Contato</span></div>
+  <h2 style="color:white;"><span data-en>Let's talk.</span><span data-pt style="display:none;">Vamos conversar.</span></h2>
+  <div class="divider"></div>
+  <p class="lead" style="margin-top:12px;"><span data-en>Select engagements. Serious problems.</span><span data-pt style="display:none;">Engajamentos selecionados. Problemas sérios.</span></p>
+  <div class="contact-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px; margin-top:40px;">
+    <a href="mailto:hsouto.ai@gmail.com" style="text-decoration:none;" class="card-glass"><h3>Email</h3><p>hsouto.ai@gmail.com</p></a>
+    <a href="https://linkedin.com/in/hugosouto" target="_blank" rel="noopener noreferrer" style="text-decoration:none;" class="card-glass"><h3>LinkedIn</h3><p>/in/hugosouto</p></a>
+    <a href="https://github.com/hugosouto" target="_blank" rel="noopener noreferrer" style="text-decoration:none;" class="card-glass"><h3>GitHub</h3><p>hugosouto</p></a>
+    <a href="https://4io.ai" target="_blank" rel="noopener noreferrer" style="text-decoration:none;" class="card-glass"><h3 style="color:var(--gold);">4io.ai</h3><p><span data-en>The AI Factory</span><span data-pt style="display:none;">A Fábrica de IA</span></p></a>
+  </div>
+</section>
+</div>
+
+<!-- REFERENCES -->
+<div class="snap-section alt short">
+<section id="refs" style="padding:40px 32px 64px;">
+  <h2 style="font-size:16px;"><span data-en>Evidence</span><span data-pt style="display:none;">Evidências</span></h2>
+  <div class="refs-grid">
+    <a class="ref-link" href="https://www.gov.br/compras/pt-br/painel-covid" target="_blank"><div class="ref-label">COVID Dashboard</div><div class="ref-desc"><span data-en>Live since 2020</span><span data-pt style="display:none;">Ativo desde 2020</span></div></a>
+    <a class="ref-link" href="https://www.gov.br/cgu/pt-br/assuntos/auditoria-e-fiscalizacao/alice" target="_blank"><div class="ref-label">ALICE</div><div class="ref-desc">254K+ processes</div></a>
+    <a class="ref-link" href="https://www.gov.br/mec/pt-br/assuntos/noticias/2026/janeiro/governo-orienta-estudantes-sobre-resultado-do-enem-pelo-gov.br" target="_blank"><div class="ref-label">Chat GOV.BR</div><div class="ref-desc">Jan 2026 launch</div></a>
+    <a class="ref-link" href="https://github.com/hugosouto/comprasgov-daas-sql-queries" target="_blank"><div class="ref-label">GitHub</div><div class="ref-desc">Open-source SQL</div></a>
+    <a class="ref-link" href="https://www.gov.br/compras/pt-br/acesso-a-informacao/noticias/compras-gov-br-vence-duas-categorias-no-premio-19-de-marco" target="_blank"><div class="ref-label"><span data-en>ALICE Award</span><span data-pt style="display:none;">Prêmio ALICE</span></div><div class="ref-desc"><span data-en>Best Innovation 2026</span><span data-pt style="display:none;">Melhor Inovação 2026</span></div></a>
+    <a class="ref-link" href="https://www.gov.br" target="_blank"><div class="ref-label">GOV.BR</div><div class="ref-desc">170M+ users</div></a>
+  </div>
+</section>
+</div>
+
+<script>
+var slides=document.querySelectorAll('.carousel-slide'),total=slides.length,cur=0;
+document.getElementById('cTot').textContent=total;
+var dotsEl=document.getElementById('cDots');
+for(var i=0;i<total;i++){var d=document.createElement('button');d.className='carousel-dot'+(i===0?' on':'');d.setAttribute('data-i',i);d.onclick=function(){cGoTo(parseInt(this.getAttribute('data-i')))};dotsEl.appendChild(d)}
+function cGoTo(i){if(i<0||i>=total||i===cur)return;slides[cur].querySelectorAll('.cc-toggle.open').forEach(function(t){togglePanel(t)});slides[cur].classList.remove('active');cur=i;slides[cur].classList.add('active');document.getElementById('cCur').textContent=cur+1;document.getElementById('cPrev').disabled=cur===0;document.getElementById('cNext').disabled=cur===total-1;dotsEl.querySelectorAll('.carousel-dot').forEach(function(d,j){d.classList.toggle('on',j===cur)})}
+function cGo(dir){cGoTo(cur+dir)}
+function togglePanel(btn){btn.classList.toggle('open');btn.nextElementSibling.classList.toggle('open')}
+var snapSections=document.querySelectorAll('.snap-section'),railEl=document.getElementById('rail');
+var railLabels={hero:'',work:'Work',practice:'Practice',depth:'Technical',contact:'Contact',refs:'Evidence'};
+snapSections.forEach(function(snap,i){var sec=snap.querySelector('section[id]');var id=sec?sec.id:'';if(i>0){var ln=document.createElement('div');ln.className='rail-line';railEl.appendChild(ln)}var dot=document.createElement('button');dot.className='rail-dot'+(i===0?' on':'');dot.innerHTML='<span class="rail-tip">'+(railLabels[id]||'')+'</span>';dot.onclick=function(){snap.scrollIntoView({behavior:'smooth'})};railEl.appendChild(dot)});
+var railDots=railEl.querySelectorAll('.rail-dot');
+new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;var idx=Array.from(snapSections).indexOf(e.target);railDots.forEach(function(d,j){d.classList.toggle('on',j===idx)})})},{rootMargin:'-40% 0px -60% 0px'}).observe(document.body);
+snapSections.forEach(function(s){new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;var idx=Array.from(snapSections).indexOf(e.target);railDots.forEach(function(d,j){d.classList.toggle('on',j===idx)})})},{rootMargin:'-40% 0px -60% 0px'}).observe(s)});
+document.querySelectorAll('.fade-in').forEach(function(el){new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{rootMargin:'0px 0px -60px 0px',threshold:0.1}).observe(el)});
+document.getElementById('btnEn').addEventListener('click',function(){setLang(true)});
+document.getElementById('btnPt').addEventListener('click',function(){setLang(false)});
+function setLang(en){document.getElementById('btnEn').classList.toggle('on',en);document.getElementById('btnPt').classList.toggle('on',!en);document.documentElement.lang=en?'en':'pt';document.querySelectorAll('[data-en]').forEach(function(el){el.style.display=en?'':'none'});document.querySelectorAll('[data-pt]').forEach(function(el){el.style.display=en?'none':''})}
+document.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')cGo(-1);if(e.key==='ArrowRight')cGo(1)});
+</script>
+</body>
+</html>
