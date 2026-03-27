@@ -375,6 +375,15 @@
   .builder-link:hover { border-bottom-color: var(--accent); }
 
   /* ─── CONTACT ─── */
+  .contact-header {
+    display: flex; align-items: center; gap: 32px;
+  }
+  .contact-header-text { flex: 1; }
+  .contact-photo {
+    width: 180px; height: 180px; border-radius: 50%;
+    object-fit: cover; border: 3px solid var(--border);
+    flex-shrink: 0;
+  }
   .contact-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
   .contact-link {
     border: 1px solid var(--border); border-radius: 8px;
@@ -413,6 +422,8 @@
     .eng-grid { grid-template-columns: 1fr; }
     .builder-grid { grid-template-columns: 1fr; }
     .contact-row { grid-template-columns: 1fr; }
+    .contact-header { flex-direction: column-reverse; text-align: center; gap: 20px; }
+    .contact-photo { width: 140px; height: 140px; }
     .proof-row { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   }
   @media (max-width: 600px) {
@@ -704,6 +715,7 @@
     <div class="carousel-dots" id="carDots"></div>
     <div class="carousel-arrows">
       <button class="carousel-btn" id="carPrev" disabled aria-label="Previous case">&#8592;</button>
+      <button class="carousel-btn" id="carPause" aria-label="Pause auto-play">&#10074;&#10074;</button>
       <button class="carousel-btn" id="carNext" aria-label="Next case">&#8594;</button>
     </div>
   </div>
@@ -824,19 +836,24 @@
 <!-- ═══════════════════════════════════════════════ -->
 <div class="slide">
   <div>
-    <div class="eyebrow">
-      <span data-en>Contact</span>
-      <span data-pt style="display:none;">Contato</span>
+    <div class="contact-header">
+      <div class="contact-header-text">
+        <div class="eyebrow">
+          <span data-en>Contact</span>
+          <span data-pt style="display:none;">Contato</span>
+        </div>
+        <h2>
+          <span data-en>Let's talk.</span>
+          <span data-pt style="display:none;">Vamos conversar.</span>
+        </h2>
+        <div class="divider"></div>
+        <p class="lead lead-contact">
+          <span data-en>Select engagements. Serious problems.</span>
+          <span data-pt style="display:none;">Engajamentos selecionados. Problemas sérios.</span>
+        </p>
+      </div>
+      <img src="img/profile.jpeg" alt="Hugo Souto" class="contact-photo">
     </div>
-    <h2>
-      <span data-en>Let's talk.</span>
-      <span data-pt style="display:none;">Vamos conversar.</span>
-    </h2>
-    <div class="divider"></div>
-    <p class="lead lead-contact">
-      <span data-en>Select engagements. Serious problems.</span>
-      <span data-pt style="display:none;">Engajamentos selecionados. Problemas sérios.</span>
-    </p>
 
     <div class="contact-row">
       <a href="mailto:hsouto.ai@gmail.com" class="contact-link">
@@ -978,16 +995,17 @@ setLang(lang);
     var d = document.createElement('button');
     d.className = 'carousel-dot' + (i === 0 ? ' on' : '');
     d.setAttribute('data-i', i);
-    d.onclick = function() { carGoTo(parseInt(this.getAttribute('data-i'))); };
+    d.onclick = function() { carGoTo(parseInt(this.getAttribute('data-i'))); resetAuto(); };
     dotsEl.appendChild(d);
   }
 
   function carGoTo(i) {
-    if (i < 0 || i >= total || i === cur) return;
+    if (i === cur) return;
+    var next = ((i % total) + total) % total;
     // close any open panels in current slide
     slides[cur].querySelectorAll('.cc-toggle.open').forEach(function(t) { togglePanel(t); });
     slides[cur].classList.remove('active');
-    cur = i;
+    cur = next;
     slides[cur].classList.add('active');
     document.getElementById('carCur').textContent = cur + 1;
     document.getElementById('carPrev').disabled = cur === 0;
@@ -995,8 +1013,31 @@ setLang(lang);
     dotsEl.querySelectorAll('.carousel-dot').forEach(function(d, j) { d.classList.toggle('on', j === cur); });
   }
 
-  document.getElementById('carPrev').addEventListener('click', function() { carGoTo(cur - 1); });
-  document.getElementById('carNext').addEventListener('click', function() { carGoTo(cur + 1); });
+  // Auto-advance every 5s
+  var paused = false;
+  var autoTimer = setInterval(function() { carGoTo(cur + 1); }, 5000);
+  function resetAuto() {
+    if (paused) return;
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function() { carGoTo(cur + 1); }, 5000);
+  }
+
+  var pauseBtn = document.getElementById('carPause');
+  pauseBtn.addEventListener('click', function() {
+    paused = !paused;
+    if (paused) {
+      clearInterval(autoTimer);
+      pauseBtn.innerHTML = '&#9654;';
+      pauseBtn.setAttribute('aria-label', 'Resume auto-play');
+    } else {
+      autoTimer = setInterval(function() { carGoTo(cur + 1); }, 5000);
+      pauseBtn.innerHTML = '&#10074;&#10074;';
+      pauseBtn.setAttribute('aria-label', 'Pause auto-play');
+    }
+  });
+
+  document.getElementById('carPrev').addEventListener('click', function() { carGoTo(cur - 1); resetAuto(); });
+  document.getElementById('carNext').addEventListener('click', function() { carGoTo(cur + 1); resetAuto(); });
 
   // Touch swipe
   var touchX = 0;
@@ -1004,7 +1045,7 @@ setLang(lang);
   carousel.addEventListener('touchstart', function(e) { touchX = e.changedTouches[0].screenX; }, { passive: true });
   carousel.addEventListener('touchend', function(e) {
     var dx = touchX - e.changedTouches[0].screenX;
-    if (Math.abs(dx) > 40) carGoTo(cur + (dx > 0 ? 1 : -1));
+    if (Math.abs(dx) > 40) { carGoTo(cur + (dx > 0 ? 1 : -1)); resetAuto(); }
   });
 })();
 
